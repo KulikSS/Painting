@@ -1,5 +1,5 @@
 import sys
-
+from random import randint
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton
 
@@ -29,8 +29,12 @@ class Example(QWidget):
         self.repaint()
 
     def draw_flag(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
-        qp.drawEllipse(30, 30, 120, 120)
+        a = randint(0, 256)
+        b = randint(0, 256)
+        c = randint(0, 256)
+        h = randint(5, 120)
+        qp.setBrush(QColor(a, b, c))
+        qp.drawEllipse(30, 30, h, h)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
